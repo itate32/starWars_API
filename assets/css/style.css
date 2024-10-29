@@ -33,11 +33,13 @@ body * {
 }
 
 .logo {
-  max-width: auto;
-  height: auto;
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  max-width: 1200px; /* Limita el ancho máximo de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
   margin-bottom: 50px;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(255, 215, 1, 5);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(255, 215, 1, 0.5);
+  object-fit: cover; /* Asegura que la imagen se recorte para cubrir el área */
 }
 
 .title {
@@ -227,32 +229,51 @@ body * {
 
 @media (max-width: 768px) {
   .timeline-container::after {
-      left: 30px;
+    left: 30px; /* Alineación de la línea de tiempo en pantallas pequeñas */
   }
-  
+
   .timeline-section {
-      padding-left: 60px;
+    padding-left: 60px; /* Espacio para que el timeline no quede demasiado cerca del borde */
   }
-  
+
   .timeline-header {
-      width: calc(100% - 60px);
+    width: calc(100% - 60px); /* Tamaño adaptativo */
   }
-  
+
   .timeline-marker {
-      left: 30px;
+    left: 30px; /* Alineación con la línea de tiempo */
   }
-  
+
   .characters-container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una columna en tablet y móvil */
   }
 }
 
 @media (max-width: 480px) {
   .characters-container {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .character-card img {
-      height: 300px;
+    height: 300px; /* Tamaño de imagen adaptado */
+  }
+
+  /* Ajustes en el footer */
+  .footer p {
+    font-size: 14px; /* Texto más pequeño */
+  }
+
+  @media (max-width: 768px) {
+    .logo {
+      max-width: 90%; /* Reduce el ancho en pantallas móviles */
+      border-radius: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      max-width: 80%; /* Más ajuste para dispositivos muy pequeños */
+      border-radius: 10px;
+    }
   }
 }
